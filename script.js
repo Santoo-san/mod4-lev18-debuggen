@@ -1,4 +1,4 @@
-// Deel A
+// Deel 1 opdracht A
 const addTheWordCool = function (array) {
   array.push("cool");
   return array;
@@ -63,3 +63,105 @@ const combineArrays = function (array1, array2) {
 };
 console.log(combineArrays([1, 2, 3], [4, 5, 6]));
 // resultaat: [1,2,3,4,5,6]
+
+//deel 2
+//opdracht A
+
+const superheroes = [
+  { name: "Batman", alter_ego: "Bruce Wayne" },
+  { name: "Superman", alter_ego: "Clark Kent" },
+  { name: "Spiderman", alter_ego: "Peter Parker" },
+];
+const findSpiderMan = function (superheroes) {
+  return superheroes.find(function (superhero) {
+    return superhero.name === "Spiderman";
+  });
+};
+console.log(findSpiderMan(superheroes));
+
+// Find Spiderman
+// result should be: {name: "Spiderman", alter_ego: "Peter Parker"}
+
+//opdracht B
+const doubleArrayValues = function (array) {
+  let newArray = [];
+  array.forEach((number) => {
+    newArray.push(number * 2);
+  });
+  return newArray;
+};
+
+console.log(doubleArrayValues([1, 2, 3]));
+// result should be [2, 4, 6]
+
+//opdracht C
+
+const containsNumberBiggerThan10 = function (array) {
+  return array.some((number) => {
+    return number > 10;
+  });
+};
+
+console.log(containsNumberBiggerThan10([1, 4, 3, 6, 9, 7, 11]));
+// result should be true
+console.log(containsNumberBiggerThan10([1, 2, 1, 2, 1, 2]));
+// result should be false
+
+//opdracht D
+
+const isItalyInTheGreat7 = function (array) {
+  return array.includes("Italy");
+};
+console.log(
+  isItalyInTheGreat7([
+    "Canada",
+    "France",
+    "Germany",
+    "Italy",
+    "Japan",
+    "United Kingdom",
+    "United States",
+  ])
+);
+// console.log(isItalyInTheGreat7.includes('Italy'));
+// result should be true
+
+//Opdracht E
+
+const tenfold = function (array) {
+  let newArray = [];
+  array.forEach((number) => {
+    newArray.push(number * 10);
+  });
+  return newArray;
+};
+console.log(tenfold([1, 4, 3, 6, 9, 7, 11]));
+// result should be [10, 40, 30, 60, 90, 70, 110]
+
+//Opdracht F
+
+function isBelow100(array) {
+  return array.every((number) => {
+    return number < 100;
+  });
+}
+
+console.log(
+  isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
+);
+console.log(isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98]));
+// result should be: false, true
+
+const array1 = [1, 2, 3, 4];
+const reducer1 = (accumulator1, currentValue1) => accumulator1 + currentValue1;
+
+//Opdracht G
+function bigSum(array) {
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return array.reduce(reducer);
+}
+
+console.log(
+  bigSum([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98, 101, 206, 234])
+);
+// result should be 1118
